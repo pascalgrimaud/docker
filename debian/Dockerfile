@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		subversion \
 	&& rm -rf /var/lib/apt/lists/*
 
-#FROM buildpack-deps:jessie-scm
+# FROM buildpack-deps:jessie-scm
 RUN apt-get update && apt-get install -y unzip && rm -rf /var/lib/apt/lists/*
 
 ENV JAVA_VERSION 7u71
