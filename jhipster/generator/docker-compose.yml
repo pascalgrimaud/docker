@@ -1,0 +1,10 @@
+jhipster:
+  image: pgrimaud/jhipster:2.9.2
+  volumes:
+  - ~/jhipster/:/jhipster
+  ports:
+  - "8080:8080"
+  - "3000:3000"
+  - "3001:3001"
+  - "4022:22"
+
