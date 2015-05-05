@@ -4,16 +4,9 @@ MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 # update
 RUN apt-get -y update
 
-# install locales
-# RUN apt-get install -y locales
-# make the "en_US.UTF-8" locale so postgres will be utf-8 enabled by default
-# RUN localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
-# ENV LANG en_US.utf8
-
 # Ensure we create the cluster with UTF-8 locale
 RUN locale-gen en_US.UTF-8 && \
     echo 'LANG="en_US.UTF-8"' > /etc/default/locale
-
 
 # install postgresql-9.3
 RUN apt-get install -y postgresql-9.3 pwgen
