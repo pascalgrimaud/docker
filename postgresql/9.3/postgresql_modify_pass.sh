@@ -5,7 +5,7 @@ if [ -f /.postgres_pass_modified ]; then
     exit 0
 fi
 
-#generate pasword
+#generate password
 PASS=${POSTGRES_PASS:-$(pwgen -s 12 1)}
 _word=$( [ ${POSTGRES_PASS} ] && echo "preset" || echo "random" )
 

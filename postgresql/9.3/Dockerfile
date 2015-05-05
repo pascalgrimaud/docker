@@ -8,12 +8,11 @@ RUN apt-get -y update
 RUN locale-gen en_US.UTF-8 && \
     echo 'LANG="en_US.UTF-8"' > /etc/default/locale
 
-# install postgresql-9.3
+# install postgresql-9.3 and pwgen
 RUN apt-get install -y postgresql-9.3 pwgen
 
 # clean
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Adjust PostgreSQL configuration so that remote connections to the database are possible. 
 RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.3/main/pg_hba.conf
