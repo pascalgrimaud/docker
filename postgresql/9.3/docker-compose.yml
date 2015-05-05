@@ -1,0 +1,5 @@
+postgresql:
+  image: pgrimaud/postgresql:9.3
+  ports:
+  - "5432:5432"
+
