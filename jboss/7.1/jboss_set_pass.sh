@@ -12,7 +12,7 @@ PASS=$PASS!
 _word=$( [ ${JBOSS_PASS} ] && echo "preset" || echo "random" )
 
 echo "=> Configuring admin user with a ${_word} password in JBoss"
-/jboss-as-7.1.1.Final/bin/add-user.sh --silent admin ${PASS}
+/jboss-as-7.1.1.Final/bin/add-user.sh --silent=true admin ${PASS}
 echo "=> Done!"
 touch /.jboss_admin_pass_configured
 
