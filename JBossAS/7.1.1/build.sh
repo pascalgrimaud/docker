@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker build -t pgrimaud/jboss:7.1.1 .
+docker build -t pgrimaud/jboss-as:7.1.1 .
 
