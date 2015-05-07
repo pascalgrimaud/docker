@@ -34,6 +34,8 @@ if [ ! -f ${PG_HOME}/.postgres_pass_modified ]; then
 	touch ${PG_HOME}/.postgres_pass_modified
 
 	service postgresql stop >/dev/null 2>&1
+else
+	echo "PostgreSQL 'postgres' user pass already modified!"
 fi
 
 # display info
