@@ -9,7 +9,7 @@ docker build -t pgrimaud/jboss-as:7.1.1 .
 ```
 # Usage
 
-Quick start with bidding to port 5432 and random password
+Quick start with bidding to port 8080, 9990 and random password
 ```bash
 docker run -d -p 8080:8080 -p 9990:9990 pgrimaud/jboss-as:7.1.1
 ```
@@ -19,7 +19,7 @@ To get the password
 docker logs <id>
 ```
 
-Start and set a specific password for postgres user
+Start and set a specific password for jboss user
 ```bash
 docker run -d -p 5432:5432 -e JBOSS_PASS="pass" pgrimaud/jboss-as:7.1.1
 ```
