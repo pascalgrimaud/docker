@@ -4,6 +4,7 @@
 
 # Installation
 ```bash
+cd 9.3/
 docker build -t pgrimaud/postgresql:9.3 .
 ```
 # Usage
