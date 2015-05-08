@@ -1,14 +1,14 @@
 FROM ubuntu:14.04
 MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 
-ENV PG_VERSION 9.3
-
 # update
 RUN apt-get -y update
 
 # Ensure we create the cluster with UTF-8 locale
 RUN locale-gen en_US.UTF-8 && \
     echo 'LANG="en_US.UTF-8"' > /etc/default/locale
+
+ENV PG_VERSION 9.3
 
 # install pwgen and postgresql-9.3
 RUN apt-get install -y pwgen \
