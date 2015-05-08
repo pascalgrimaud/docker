@@ -1,5 +1,5 @@
 <a href="http://www.postgresql.org/" target="_blank">
-<img src="https://wiki.postgresql.org/images/3/30/PostgreSQL_logo.3colors.120x120.png"/>
+<img src="https://raw.githubusercontent.com/pascalgrimaud/docker/master/postgresql/postgresql.png"/>
 </a>
 
 # Installation
