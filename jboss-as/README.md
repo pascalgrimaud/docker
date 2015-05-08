@@ -21,7 +21,7 @@ docker logs <id>
 
 Start and set a specific password for jboss user
 ```bash
-docker run -d -p 5432:5432 -e JBOSS_PASS="pass" pgrimaud/jboss-as:7.1.1
+docker run -d -p 8080:8080 -p 9990:9990 -e JBOSS_PASS="pass" pgrimaud/jboss-as:7.1.1
 ```
 
 To deploy a specific file.war, you need to make another container.
