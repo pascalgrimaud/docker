@@ -1,5 +1,7 @@
 postgresql:
   image: pgrimaud/postgresql:9.3
+  volumes:
+    - /home/pgrimaud/data/postgresql93:/var/lib/postgresql
   ports:
   - "5432:5432"
 
