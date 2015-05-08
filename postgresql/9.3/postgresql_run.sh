@@ -38,7 +38,7 @@ fi
 
 # display info
 echo "================================================================================"
-echo "You can now connect to this PostgreSQL Server using:"
+echo "You can now connect to this PostgreSQL Server ${PG_VERSION} using:"
 echo ""
 echo "    psql -h <host> -p <port> --username=postgres"
 if [ ! -d ${PASS} ]; then
