@@ -25,10 +25,9 @@ docker run -d -p 8080:8080 -p 9990:9990 -e JBOSS_PASS="pass" pgrimaud/jboss-as:7
 ```
 
 To deploy a specific file.war, you need to make another container.
-Create a new directory and put your file.war
+Create a new directory and put your file.war.
 Then, create a new Dockerfile :
 ```bash
 FROM pgrimaud/jboss-as:7.1.1
 ADD file.war /jboss-as-7.1.1.Final/standalone/file.war
 ```
-

@@ -17,9 +17,3 @@ To get the password
 ```bash
 docker logs <id>
 ```
-
-Start and set a specific password for jenkins user
-```bash
-docker run -d -p 8080:8080 -e JBOSS_PASS="pass" pgrimaud/jenkins
-```
-
