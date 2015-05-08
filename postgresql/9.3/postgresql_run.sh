@@ -16,8 +16,6 @@ if [ ! -d ${PG_DATADIR} ]; then
 		--username=postgres --encoding=unicode \
 		--lc-collate='en_US.UTF-8' --lc-ctype='en_US.UTF-8' \
 		--auth=trust >/dev/null
-else
-	echo "The database already exists..."
 fi
 
 # change the password
