@@ -1,5 +1,5 @@
 <a href="http://jbossas.jboss.org/" target="_blank">
-<img src="https://raw.githubusercontent.com/pascalgrimaud/docker/master/jboss-as/as7_logo.png"/>
+    <img src="https://raw.githubusercontent.com/pascalgrimaud/docker/master/jboss-as/as7_logo.png"/>
 </a>
 
 # Installation
