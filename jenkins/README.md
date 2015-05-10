@@ -15,7 +15,7 @@ docker run -d -p 8080:8080 pgrimaud/jenkins
 
 Start and mount a volume for data persistence at /path
 ```bash
-docker run -d -p 8080:8080 -v /path:/jenkins pgrimaud/jenkins
+docker run -d -p 8080:8080 -v ~/volumes/jenkins:/jenkins pgrimaud/jenkins
 ```
 # Description
 
