@@ -24,10 +24,17 @@ Start and set a specific password for postgres user
 docker run -d -p 5432:5432 -e POSTGRES_PASS="pass" pgrimaud/postgresql:9.3
 ```
 
-Start and mount a volume for data persistence at /path
+Start and mount a volume for data persistence at ~/volumes/postgresql93/data
 ```bash
-docker run -d -p 5432:5432 -v /path:/var/lib/postgresql pgrimaud/postgresql:9.3
+docker run -d -p 5432:5432 -v ~/volumes/postgresql93/data:/var/lib/postgresql pgrimaud/postgresql:9.3
 ```
+
+Start and mount a volume for data persistence at ~/volumes/postgresql93/data and logs at ~/volumes/postgresql93/logs
+```bash
+docker run -d -p 5432:5432 -v ~/volumes/postgresql93/data:/var/lib/postgresql \
+-v ~/volumes/postgresql93/logs:/var/log/postgresql pgrimaud/postgresql:9.3
+```
+
 
 If your forget the postgres user's password, delete the file at /path
 ```bash

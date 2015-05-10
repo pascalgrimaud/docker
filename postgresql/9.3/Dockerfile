@@ -31,4 +31,3 @@ RUN chmod 755 /*.sh
 
 EXPOSE 5432
 CMD ["/postgresql_run.sh"]
-

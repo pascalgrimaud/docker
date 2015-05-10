@@ -19,7 +19,7 @@ if [ ! -d ${PG_DATADIR} ]; then
 fi
 
 # change the password
-if [ ! -f ${PG_HOME}/.postgres_pass_modified ]; then
+if [ ! -f ${PG_HOME}/${PG_VERSION}/.postgres_pass_modified ]; then
 	service postgresql start >/dev/null 2>&1
 
 	# generate password
@@ -29,7 +29,7 @@ if [ ! -f ${PG_HOME}/.postgres_pass_modified ]; then
 	echo "=> Modifying 'postgres' user with a ${_word} password in PostgreSQL"
 	sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password '$PASS';"
 	echo "=> Done!"
-	touch ${PG_HOME}/.postgres_pass_modified
+	touch ${PG_HOME}/${PG_VERSION}/.postgres_pass_modified
 
 	service postgresql stop >/dev/null 2>&1
 else
@@ -53,4 +53,3 @@ echo "==========================================================================
 
 # start PostgreSQL 
 sudo -u postgres ${PG_BINDIR}/postgres -D ${PG_DATADIR} -c config_file=${PG_CONFDIR}/postgresql.conf
-
