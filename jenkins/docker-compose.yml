@@ -1,6 +1,6 @@
 jenkins:
   image: pgrimaud/jenkins
   volumes:
-  - /home/pgrimaud/data/jenkins:/jenkins
+  - ~/volumes/jenkins:/jenkins
   ports:
   - "8080:8080"
