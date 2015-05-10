@@ -36,7 +36,7 @@ docker run -d -p 5432:5432 -v ~/volumes/postgresql93/data:/var/lib/postgresql \
 ```
 
 
-If your forget the postgres user's password, delete the file at /path
+If your forget the postgres user's password, delete the file .postgres_pass_modified
 ```bash
-sudo rm /path/.postgres_pass_modified
+sudo rm ~/volumes/postgresql93/data/9.3/.postgres_pass_modified
 ```
