@@ -2,20 +2,21 @@ FROM ubuntu:14.04
 MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 
 # update
-RUN apt-get install -y wget && \
-	echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
-	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - && \
-	apt-get -y update
+RUN apt-get -y update
 
 # Ensure we create the cluster with UTF-8 locale
 RUN locale-gen en_US.UTF-8 && \
     echo 'LANG="en_US.UTF-8"' > /etc/default/locale
 
-ENV PG_VERSION 9.4
+# install pwgen and wget
+RUN apt-get -y install pwgen wget
 
-# install pwgen and postgresql-9.4
-RUN apt-get install -y pwgen \
-	postgresql-${PG_VERSION} \
+# install postgresql-9.4
+ENV PG_VERSION 9.4
+RUN	echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
+	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - && \
+	apt-get -y update
+RUN apt-get -y install postgresql-${PG_VERSION} \
 	postgresql-client-${PG_VERSION} \
 	postgresql-contrib-${PG_VERSION}
 

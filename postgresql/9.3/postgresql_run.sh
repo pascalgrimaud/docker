@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting container..."
+echo "Starting container : PostgreSQL Server ${PG_VERSION}"
 
 PG_HOME="/var/lib/postgresql"
 PG_CONFDIR="/etc/postgresql/${PG_VERSION}/main"
@@ -26,9 +26,9 @@ if [ ! -f ${PG_HOME}/${PG_VERSION}/.postgres_pass_modified ]; then
 	PASS=${POSTGRES_PASS:-$(pwgen -s 12 1)}
 	_word=$( [ ${POSTGRES_PASS} ] && echo "preset" || echo "random" )
 
-	echo "=> Modifying 'postgres' user with a ${_word} password in PostgreSQL"
+	echo "Modifying 'postgres' user with a ${_word} password in PostgreSQL"
 	sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password '$PASS';"
-	echo "=> Done!"
+	echo "Done!"
 	touch ${PG_HOME}/${PG_VERSION}/.postgres_pass_modified
 
 	service postgresql stop >/dev/null 2>&1
@@ -38,7 +38,7 @@ fi
 
 # display info
 echo "================================================================================"
-echo "You can now connect to this PostgreSQL Server ${PG_VERSION} using:"
+echo "You can now connect to this PostgreSQL Server using :"
 echo ""
 echo "    psql -h <host> -p <port> --username=postgres"
 if [ ! -d ${PASS} ]; then

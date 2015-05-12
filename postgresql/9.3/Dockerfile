@@ -8,11 +8,12 @@ RUN apt-get -y update
 RUN locale-gen en_US.UTF-8 && \
     echo 'LANG="en_US.UTF-8"' > /etc/default/locale
 
-ENV PG_VERSION 9.3
+# install pwgen
+RUN apt-get -y install pwgen
 
-# install pwgen and postgresql-9.3
-RUN apt-get install -y pwgen \
-	postgresql-${PG_VERSION} \
+# install postgresql-9.3
+ENV PG_VERSION 9.3
+RUN apt-get -y install postgresql-${PG_VERSION} \
 	postgresql-client-${PG_VERSION} \
 	postgresql-contrib-${PG_VERSION}
 
