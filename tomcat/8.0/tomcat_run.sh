@@ -2,10 +2,6 @@
 
 echo "Starting container..."
 
-if [ "$TOMCAT_PASS" = "**Random**" ]; then
-    unset TOMCAT_PASS
-fi
-
 # change the password
 if [ ! -f /.tomcat_admin_pass_configured ]; then
 	# generate password
