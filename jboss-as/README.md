@@ -7,6 +7,9 @@
 cd 7.1.1/
 docker build -t pgrimaud/jboss-as:7.1.1 .
 ```
+
+To build JBoss 7.2, you have to download jboss-eap-6.1.0.zip and put it in the "7.2/" directory.
+
 # Usage
 
 Quick start with bidding to port 8080, 9990 and random password
@@ -31,3 +34,5 @@ Then, create a new Dockerfile :
 FROM pgrimaud/jboss-as:7.1.1
 ADD file.war /jboss-as-7.1.1.Final/standalone/file.war
 ```
+
+
