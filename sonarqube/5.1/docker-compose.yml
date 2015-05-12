@@ -1,0 +1,6 @@
+sonarqube:
+  image: pgrimaud/sonarqube
+  volumes:
+  - ~/volumes/sonarqube:/sonarqube
+  ports:
+  - "9000:9000"
