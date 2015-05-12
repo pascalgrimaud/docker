@@ -4,14 +4,12 @@ MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 # update
 RUN apt-get -y update
 
-# install pwgen and unzip
-RUN apt-get install -y pwgen wget
-
 # install java7
 RUN apt-get install -y openjdk-7-jre
-
-# Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+
+# install pwgen and unzip
+RUN apt-get install -y pwgen wget
 
 # download jboss
 RUN wget -q http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.tar.gz && \
@@ -26,9 +24,6 @@ RUN sed -i -r 's/jboss.bind.address.management:127.0.0.1/jboss.bind.address.mana
 
 ADD jboss_run.sh /jboss_run.sh
 RUN chmod 755 /*.sh
-
-# Exposed ENV
-ENV JBOSS_PASS **Random**
 
 EXPOSE 8080 9990
 CMD ["/jboss_run.sh"]
