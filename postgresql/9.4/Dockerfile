@@ -8,8 +8,8 @@ RUN apt-get -y update
 RUN locale-gen en_US.UTF-8 && \
     echo 'LANG="en_US.UTF-8"' > /etc/default/locale
 
-# install pwgen and wget
-RUN apt-get -y install pwgen wget
+# install wget
+RUN apt-get -y install wget
 
 # install postgresql-9.4
 ENV PG_VERSION 9.4
