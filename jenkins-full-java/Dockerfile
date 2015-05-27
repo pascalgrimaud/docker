@@ -29,5 +29,11 @@ RUN cd /tmp ;\
     echo yes|sh /tmp/j2sdk-1_4_2_19-linux-i586.bin
 RUN mv /tmp/j2sdk1.4.2_19 /usr/lib/jvm/
 
+# install maven 2.2
+RUN wget -O /tmp/apache-maven-2.2.1-bin.tar.gz http://archive.apache.org/dist/maven/maven-2/2.2.1/binaries/apache-maven-2.2.1-bin.tar.gz
+RUN echo "3f829ed854cbacdaca8f809e4954c916 /tmp/apache-maven-2.2.1-bin.tar.gz" | md5sum -c
+RUN tar xzf /tmp/apache-maven-2.2.1-bin.tar.gz -C /opt/
+RUN ln -s /opt/apache-maven-2.2.1 /opt/maven2
+
 # clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
