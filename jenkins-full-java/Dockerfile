@@ -33,7 +33,14 @@ RUN mv /tmp/j2sdk1.4.2_19 /usr/lib/jvm/
 RUN wget -O /tmp/apache-maven-2.2.1-bin.tar.gz http://archive.apache.org/dist/maven/maven-2/2.2.1/binaries/apache-maven-2.2.1-bin.tar.gz
 RUN echo "3f829ed854cbacdaca8f809e4954c916 /tmp/apache-maven-2.2.1-bin.tar.gz" | md5sum -c
 RUN tar xzf /tmp/apache-maven-2.2.1-bin.tar.gz -C /opt/
+
+# link
+RUN ln -s /usr/lib/jvm/j2sdk1.4.2_19 /opt/java4
+RUN ln -s /usr/lib/jvm/jdk1.5.0_22 /opt/java5
+RUN ln -s /usr/lib/jvm/java-6-oracle /opt/java6
+RUN ln -s /usr/lib/jvm/java-7-oracle /opt/java7
 RUN ln -s /opt/apache-maven-2.2.1 /opt/maven2
 
 # clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
