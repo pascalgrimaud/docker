@@ -2,7 +2,6 @@
 
 echo "Starting container : mysql 5.6"
 
-
 # change the password
 if [ ! -f /.password ]; then
 	echo "Initializing the user password..."
@@ -35,4 +34,4 @@ echo "######################################################################"
 echo ""
 
 # start service
-# ---> put start service here
+exec mysqld

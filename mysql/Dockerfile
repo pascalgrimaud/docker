@@ -6,7 +6,7 @@ RUN apt-get -y update
 
 # installation : mysql
 ENV MYSQL_VERSION 5.6
-RUN apt-get -y install mysql-server--${MYSQL_VERSION} \
+RUN apt-get -y install mysql-server-${MYSQL_VERSION} \
 	mysql-client-${MYSQL_VERSION}
 
 # configuration :
