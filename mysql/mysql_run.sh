@@ -2,6 +2,19 @@
 
 echo "Starting container : mysql 5.6"
 
+# initialize mysql data directory
+if [ ! -d ${MYSQL_DATADIR} ]; then
+	echo "Initializing database..."
+	sudo -u postgres -H "${PG_BINDIR}/initdb" \
+		--pgdata="${PG_DATADIR}" \
+		--username=postgres \
+		--encoding=unicode \
+		--lc-collate='en_US.UTF-8' \
+		--lc-ctype='en_US.UTF-8' \
+		--auth=trust >/dev/null
+	echo "Initializing database : ok"
+fi
+
 # change the password
 if [ ! -f /.password ]; then
 	echo "Initializing the user password..."
