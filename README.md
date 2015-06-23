@@ -1,6 +1,6 @@
-[![logo](https://d3oypxn00j2a10.cloudfront.net/0.14.0/img/nav/docker-logo-loggedout.png)]
+[![logo](https://raw.githubusercontent.com/pascalgrimaud/dockerfiles/master/images/docker.png)]
 (https://www.docker.com/)
-![logo](https://raw.githubusercontent.com/pascalgrimaud/docker/master/lab.png)
+![logo](https://raw.githubusercontent.com/pascalgrimaud/dockerfiles/master/images/lab.png)
 
 
-Different Dockerfile here... just for testing.
+Different Dockerfiles here... just for testing.
