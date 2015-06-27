@@ -5,9 +5,11 @@ MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 RUN apt-get -y update
 
 # set UTF-8 locale
-RUN locale-gen en_US.UTF-8 && \
-    echo 'LANG="en_US.UTF-8"' > /etc/default/locale
+RUN locale-gen en_US.UTF-8
+RUN ls -l /usr/lib/locale/
 
+
+RUN echo 'LANG="en_US.UTF-8"' > /etc/default/locale
 RUN cat /etc/default/locale
 
 CMD ["/bin/bash"]
