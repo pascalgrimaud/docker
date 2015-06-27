@@ -6,6 +6,8 @@ RUN apt-get -y update
 
 # set UTF-8 locale
 RUN locale-gen en_US.UTF-8
+RUN TEST=$(locale-gen en_US.UTF-8 | grep failed); if [ "$TEST" == "en_US.UTF-8... failed" ]; then locale-gen-failed ; fi
+
 RUN ls -l /usr/lib/locale/
 RUN locale -a
 
