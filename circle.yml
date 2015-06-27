@@ -1,10 +1,10 @@
 machine:
-services:
-- docker
+  services:
+    - docker
 dependencies:
-override:
-- docker info
-- docker build -t pascalgrimaud/ubuntu ubuntu/trusty/
+  override:
+    - docker info
+    - docker build -t pascalgrimaud/ubuntu ubuntu/trusty/
 test:
-override:
-- docker run -it pascalgrimaud/ubuntu echo "Hello World !"
+  override:
+    - docker run -it pascalgrimaud/ubuntu echo "Hello World !"
