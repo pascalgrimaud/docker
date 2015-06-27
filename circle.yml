@@ -7,4 +7,4 @@ dependencies:
     - docker build -t pascalgrimaud/ubuntu ubuntu/trusty/
 test:
   override:
-    - docker run -it pascalgrimaud/ubuntu locale-gen en_US.UTF-8
+    - docker run -it pascalgrimaud/ubuntu locale-gen en_US.UTF-8 | grep up-to-date
