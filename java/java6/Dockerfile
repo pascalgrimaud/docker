@@ -1,0 +1,15 @@
+FROM pascalgrimaud/ubuntu
+MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
+
+# update
+RUN apt-get -y update
+
+# install java 6
+RUN echo oracle-java6-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+RUN apt-get -y install oracle-java6-installer
+RUN update-java-alternatives -s java-6-oracle
+RUN echo "export JAVA_HOME=/usr/lib/jvm/java-6-oracle" >> ~/.bashrc
+
+# clean
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
