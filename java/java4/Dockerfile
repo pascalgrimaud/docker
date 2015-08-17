@@ -1,6 +1,9 @@
 FROM pascalgrimaud/ubuntu
 MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 
+# install utilities
+RUN apt-get -y install wget
+
 # update
 RUN apt-get -y update
 
