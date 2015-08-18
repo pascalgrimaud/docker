@@ -13,9 +13,10 @@ RUN cd /tmp ;\
     -O jdk-1_5_0_22-linux-amd64.bin http://download.oracle.com/otn-pub/java/jdk/1.5.0_22/jdk-1_5_0_22-linux-amd64.bin
 RUN cd /tmp ;\
     echo yes|sh /tmp/jdk-1_5_0_22-linux-amd64.bin
-RUN mv /tmp/jdk1.5.0_22 /usr/lib/jvm/
+RUN mkdir -p /usr/lib/jvm/
+RUN mv /tmp/jdk1.5.0_22/ /usr/lib/jvm/
 RUN echo "export JAVA_HOME=/usr/lib/jvm/jdk1.5.0_22" >> ~/.bashrc
+RUN echo "export PATH=$PATH:/usr/lib/jvm/jdk1.5.0_22/bin" >> ~/.bashrc
 
 # clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
