@@ -22,5 +22,7 @@ RUN echo "export JAVA_HOME=/usr/lib/jvm/j2sdk1.4.2_19" >> ~/.bashrc
 RUN echo "export PATH=$PATH:/usr/lib/jvm/j2sdk1.4.2_19/bin" >> ~/.bashrc
 
 # clean
-#RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+CMD ["/bin/bash"]
 

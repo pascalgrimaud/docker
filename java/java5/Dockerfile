@@ -20,3 +20,5 @@ RUN echo "export PATH=$PATH:/usr/lib/jvm/jdk1.5.0_22/bin" >> ~/.bashrc
 
 # clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+CMD ["/bin/bash"]
