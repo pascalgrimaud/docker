@@ -21,8 +21,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # expose ports
 EXPOSE 8080
 
-# ENV JAVA_HOME /usr/lib/jvm/jdk1.5.0_22/
-ENV JAVA_HOME /usr/lib/jvm/java-7-oracle/
+ENV JAVA_HOME /usr/lib/jvm/jdk1.5.0_22/
 
 # script to start the container
 ADD jboss_run.sh /jboss_run.sh
