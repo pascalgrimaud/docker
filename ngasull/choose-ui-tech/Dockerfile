@@ -13,8 +13,7 @@ RUN apt-get -y install git
 # clone app
 RUN cd /
 RUN git clone https://github.com/ngasull/choose-ui-tech-2015-08.git
-RUN cd /choose-ui-tech-2015-08/
-    && npm install
+RUN cd /choose-ui-tech-2015-08/ ; npm install
 
 # expose port
 EXPOSE 3000
