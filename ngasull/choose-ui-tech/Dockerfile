@@ -9,6 +9,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-software-propert
 
 # install git
 RUN apt-get -y install git
+RUN apt-get -y install g++
+RUN apt-get -y install make
 
 # clone app
 RUN cd /
