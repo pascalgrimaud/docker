@@ -10,3 +10,7 @@ Usage
 
 - If you forget the admin password, delete the file .password and restart the container :
   docker exec -it <container id> rm /.password
+
+- Debug mode
+ docker run -d -p 8080:8080 -p 1898:1898 -p 62911:62911 -e DEBUG="on" pascalgrimaud/tomcat:8.0.26
+
