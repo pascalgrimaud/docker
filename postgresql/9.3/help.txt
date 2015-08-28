@@ -17,3 +17,4 @@ Usage with volumes
 
 - If you forget the postgres user password, delete the file .password :
   sudo rm ~/volumes/postgresql93/data/9.3/.password
+
