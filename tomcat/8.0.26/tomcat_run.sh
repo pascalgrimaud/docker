@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting container : Apache Tomcat 8.0.23"
+echo "Starting container : Apache Tomcat 8.0.26"
 
 # change the password
 if [ ! -f /.password ]; then
@@ -47,5 +47,5 @@ echo "######################################################################"
 echo ""
 
 # start Apache Tomcat
-exec /opt/apache-tomcat-8.0.23/bin/catalina.sh run
+exec /opt/apache-tomcat-8.0.26/bin/catalina.sh run
 
