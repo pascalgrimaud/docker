@@ -32,4 +32,4 @@ echo "######################################################################"
 echo ""
 
 # start JBoss
-exec /opt/jboss-4.2.2.GA/bin/run.sh
+exec /opt/jboss-4.2.2.GA/bin/run.sh --host=0.0.0.0

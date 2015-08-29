@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t pascalgrimaud/jboss-as:4.2.2 .
+docker build -t pascalgrimaud/jboss:4.2.2 .
