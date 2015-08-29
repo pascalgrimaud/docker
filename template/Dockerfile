@@ -4,6 +4,9 @@ MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 # update
 RUN apt-get -y update
 
+# install software-properties-common (so you can do add-apt-repository)
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q software-properties-common
+
 # install utilities
 RUN apt-get -y install wget
 
