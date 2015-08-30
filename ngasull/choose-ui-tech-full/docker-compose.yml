@@ -1,0 +1,5 @@
+tomcat:
+  image: pascalgrimaud/choose-ui-tech:full
+  ports:
+  - "3000:3000"
+
