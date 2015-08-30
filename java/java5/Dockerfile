@@ -1,11 +1,11 @@
 FROM pascalgrimaud/ubuntu
 MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 
-# install utilities
-RUN apt-get -y install wget
-
 # update
 RUN apt-get -y update
+
+# install utilities
+RUN apt-get -y install wget
 
 # install Sun JDK 1.5.0_22
 RUN cd /tmp ;\
@@ -15,10 +15,13 @@ RUN cd /tmp ;\
     echo yes|sh /tmp/jdk-1_5_0_22-linux-amd64.bin
 RUN mkdir -p /usr/lib/jvm/
 RUN mv /tmp/jdk1.5.0_22/ /usr/lib/jvm/
-RUN echo "export JAVA_HOME=/usr/lib/jvm/jdk1.5.0_22" >> ~/.bashrc
-RUN echo "export PATH=$PATH:/usr/lib/jvm/jdk1.5.0_22/bin" >> ~/.bashrc
+
+# env
+ENV JAVA_HOME /usr/lib/jvm/jdk1.5.0_22
+ENV PATH $PATH:$JAVA_HOME/bin
 
 # clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-CMD ["/bin/bash"]
+# default command
+CMD ["bash"]

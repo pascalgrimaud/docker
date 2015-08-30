@@ -1,11 +1,11 @@
 FROM pascalgrimaud/ubuntu
 MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 
-# install utilities
-RUN apt-get -y install wget
-
 # update
 RUN apt-get -y update
+
+# install utilities
+RUN apt-get -y install wget
 
 # install 32 bits lib
 RUN apt-get install libc6-i386
@@ -18,11 +18,13 @@ RUN cd /tmp ;\
     echo yes|sh /tmp/j2sdk-1_4_2_19-linux-i586.bin
 RUN mkdir -p /usr/lib/jvm/
 RUN mv /tmp/j2sdk1.4.2_19 /usr/lib/jvm/
-RUN echo "export JAVA_HOME=/usr/lib/jvm/j2sdk1.4.2_19" >> ~/.bashrc
-RUN echo "export PATH=$PATH:/usr/lib/jvm/j2sdk1.4.2_19/bin" >> ~/.bashrc
+
+# env
+ENV JAVA_HOME /usr/lib/jvm/j2sdk1.4.2_19
+ENV PATH $PATH:$JAVA_HOME/bin
 
 # clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-CMD ["/bin/bash"]
-
+# default command
+CMD ["bash"]
