@@ -17,5 +17,4 @@ RUN npm install -g npm
 # clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-CMD ["/bin/bash"]
-
+CMD ["bash"]
