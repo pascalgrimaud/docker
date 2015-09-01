@@ -7,7 +7,7 @@ RUN apt-get -y update
 # install python-software-properties software-properties-common (so you can do add-apt-repository)
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-software-properties software-properties-common
 
-# install curl g++ make
+# install g++ make
 RUN apt-get -y install g++
 RUN apt-get -y install make
 
