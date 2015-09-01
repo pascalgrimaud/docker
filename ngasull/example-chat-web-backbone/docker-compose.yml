@@ -1,0 +1,5 @@
+tomcat:
+  image: pascalgrimaud/example-chat-web-backbone
+  ports:
+  - "3000:3000"
+
