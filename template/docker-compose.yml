@@ -1,5 +1,0 @@
-tomcat:
-  image: pascalgrimaud/<template>:<version>
-  ports:
-  - "<port>:<port>"
-
