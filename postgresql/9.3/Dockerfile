@@ -1,14 +1,18 @@
-FROM pascalgrimaud/ubuntu
+FROM ubuntu:trusty
 MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 
 # update
 RUN apt-get -y update
 
+# set UTF-8 locale
+RUN locale-gen en_US.UTF-8 && \
+    echo 'LANG="en_US.UTF-8"' > /etc/default/locale
+
 # installation : postgresql-9.3
 ENV PG_VERSION 9.3
 RUN apt-get -y install postgresql-${PG_VERSION} \
-	postgresql-client-${PG_VERSION} \
-	postgresql-contrib-${PG_VERSION}
+    postgresql-client-${PG_VERSION} \
+    postgresql-contrib-${PG_VERSION}
 
 # configuration : remote connections to the database are possible
 RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/${PG_VERSION}/main/pg_hba.conf
@@ -24,8 +28,8 @@ EXPOSE 5432
 VOLUME ["/var/log/postgresql", "/var/lib/postgresql"]
 
 # add help
-ADD help /usr/local/bin/
 ADD help.txt /
+ADD help /usr/local/bin/
 RUN chmod 755 /usr/local/bin/help
 
 # script to start the container

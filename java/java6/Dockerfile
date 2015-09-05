@@ -1,4 +1,4 @@
-FROM pascalgrimaud/ubuntu
+FROM ubuntu:trusty
 MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 
 # update
