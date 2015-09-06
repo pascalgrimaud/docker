@@ -68,14 +68,17 @@ RUN tar xzf /tmp/apache-maven-3.0.5-bin.tar.gz -C /opt/
 #     echo yes|sh /tmp/jdk-1_5_0_22-linux-amd64.bin
 # RUN mv /tmp/jdk1.5.0_22 /usr/lib/jvm/
 
+# install 32 bits lib
+# RUN apt-get install libc6-i386
+
 # install Sun JDK 1.4.2_19
 # RUN cd /tmp ;\
 #     wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" \
 #     -O j2sdk-1_4_2_19-linux-i586.bin http://download.oracle.com/otn-pub/java/j2sdk/1.4.2_19/j2sdk-1_4_2_19-linux-i586.bin
 # RUN cd /tmp ;\
 #     echo yes|sh /tmp/j2sdk-1_4_2_19-linux-i586.bin
+# RUN mkdir -p /usr/lib/jvm/
 # RUN mv /tmp/j2sdk1.4.2_19 /usr/lib/jvm/
-
 #--------------------
 
 # link
