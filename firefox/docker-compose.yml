@@ -1,0 +1,7 @@
+# docker run -ti --rm -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix firefox
+firefox:
+  image: firefox
+  environment:
+  - DISPLAY=:0
+  volumes:
+  - /tmp/.X11-unix:/tmp/.X11-unix
