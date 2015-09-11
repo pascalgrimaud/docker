@@ -1,0 +1,8 @@
+# docker run -ti --rm -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix firefox
+eclipse:
+  image: eclipse
+  environment:
+  - DISPLAY=:0
+  volumes:
+  - /tmp/.X11-unix:/tmp/.X11-unix
+  - ~/volumes/eclipse/workspace:/home/developer/workspace
