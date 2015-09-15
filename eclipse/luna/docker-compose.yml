@@ -1,6 +1,5 @@
-# docker run -ti --rm -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix firefox
-eclipse:
-  image: eclipse
+eclipse_luna:
+  image: eclipse:luna
   environment:
   - DISPLAY=:0
   volumes:

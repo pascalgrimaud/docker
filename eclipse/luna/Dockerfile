@@ -1,4 +1,5 @@
 FROM pascalgrimaud/java:8
+MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 
 RUN apt-get update && apt-get install -y wget
 
