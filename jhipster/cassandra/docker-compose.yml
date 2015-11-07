@@ -1,7 +1,8 @@
-jhipster-cassandra:
-  image: cassandra
+jhipster-pgr-cassandra:
+  container_name: jhipster-pgr-cassandra
+  build: .
   volumes:
-  - ~/volumes/cassandra/:/var/lib/cassandra/data
+  - ~/volumes/jhipster/pgr/cassandra/:/var/lib/cassandra/data
   ports:
   - "7000:7000"
   - "7001:7001"

@@ -3,7 +3,7 @@ jhipster-postgresql:
   volumes:
   - ~/volumes/jhipster/postgresql/:/var/lib/postgresql/
   environment:
-    - POSTGRES_USER=jhipster
+    - POSTGRES_USER=bubuxpostgres
   ports:
   - "5432:5432"
   

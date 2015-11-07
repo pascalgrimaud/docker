@@ -1,4 +1,3 @@
-use cassandra2;
 
 CREATE TABLE IF NOT EXISTS user (
     id text,
