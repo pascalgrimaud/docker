@@ -1,0 +1,11 @@
+version: '2'
+services:
+    jenkinsci:
+        container_name: jenkinsci
+        image: jenkinsci/jenkins:2.9
+        # volumes:
+        #    - ../volumes/jenkins:/var/jenkins_home
+        ports:
+            - 18080:8080
+            - 50000:50000
+
