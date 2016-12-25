@@ -1,7 +1,0 @@
-eclipse_luna:
-  image: eclipse:luna
-  environment:
-  - DISPLAY=:0
-  volumes:
-  - /tmp/.X11-unix:/tmp/.X11-unix
-  - ~/volumes/eclipse/workspace:/home/developer/workspace
